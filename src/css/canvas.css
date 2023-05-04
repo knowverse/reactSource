@@ -1,0 +1,99 @@
+#mainc{
+    height:92vh!important;
+    /* border:2px solid red; */
+    /* min-height: 500px; */
+    max-height:768px;
+    margin:0;
+    /* border:2px solid red; */
+}
+#sfa{
+   
+}
+#shoot,#controls{
+    width:100%;
+    
+    /* border:2px solid blue */
+}
+
+#shoot{
+    position: relative;
+    height:90%;
+}
+#controls{
+    height:10%;
+    border:2px solid black;
+    border-width:2px 0 0 0;
+    box-shadow:-2px -2px 4px gray;
+}
+
+#canvas,#video{
+    position: absolute;
+    width:100%;
+    height:100%;
+   
+}
+
+#video{
+    opacity:0.5;
+    object-fit:cover;
+    transform: scale(1,1);
+}
+#canvas{
+    opacity:1;
+}
+#canvas{
+    border:5px solid white;
+    top:50%;
+    left:50%;
+    height:300px;
+    width:300px;
+    border-radius:50%;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.5);
+    
+
+
+
+}
+#video{
+    transform: scaleX(-1);
+}
+
+#canvas{
+    transform:translate(-50%,-50%) scaleX(-1);
+}
+/*transitions required*/
+#shutter{
+    border:2px solid black;
+    width:64px;
+    height:64px;
+    border-radius: 50%;
+    position:relative;
+    top:50%;
+    transform:translatey(-50%);
+
+   
+
+}
+#controls svg{
+    /* border:2px solid red; */
+    width:42px;
+    height: 42px;
+   position: absolute;
+   top:50%;
+   left:50%;
+   transform: translate(-50%,-50%);
+}
+#shoot h3{
+    position: absolute;
+    /* left:50%; */
+   
+    text-align: center;
+    color:black;
+    margin-top:4px;
+    padding:4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width:100%;
+    /* border:2px solid red; */
+    /* transform: translateX(-50%); */
+}

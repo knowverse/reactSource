@@ -1,0 +1,23 @@
+#form{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width: 340px;
+    border:2px solid green;
+    box-shadow:4px 4px 6px gray;
+    margin:auto;
+    border-radius:10px
+}
+
+.group{
+    width:90%;
+    margin:auto;
+    /* border:2px solid red; */
+
+
+}
+#submit{
+    position:relative;
+    left:75%;
+}

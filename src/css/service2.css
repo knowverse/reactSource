@@ -1,0 +1,211 @@
+#service{
+    margin:auto;
+    
+}
+#retake,#send,#next,#image,#closeshoot,#record{
+    transform:rotate(90deg);
+    
+    padding:6px;
+    width: 64px;
+    margin-top:5px;
+}
+#secondControl{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+}
+#secondControl span,#service svg{
+    display: block;
+}
+#secondControl span{
+    text-align: center;
+    font-size:12px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+#service svg{
+    width:34px;
+    height:34px;
+    
+    margin:auto;
+    
+
+}
+#closeshoot{
+    
+    position: absolute;
+    top:0;
+    right:0;
+   
+}
+#closeshoot svg{
+    width: 32px;
+    height: 32px;
+}
+#sfa{
+    position: relative;
+}
+#record,#sheet{
+    position: absolute;
+    top:0;
+
+}
+#image,#carousel{
+    position: absolute;
+    bottom:10%;
+}
+#sheet h3{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+   
+}
+#sheet{
+    width:200px;
+    height: 200px;
+    overflow-y: scroll;
+    list-style-type:none ;
+    text-transform: capitalize;
+    background-color: white;
+    
+}
+#sheet li{
+    margin-left:15px;
+}
+
+#sheet h3 span{
+    cursor: pointer;
+    position: absolute;
+    left:80%;
+}
+#carousel{
+   
+    width:300px;
+    height: 300px;
+}
+
+#carousel>#caro{
+    top:14%;
+    margin-top:0;
+
+}
+#carousel h3{
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    background-color: white;
+    margin-bottom:0;
+    position: relative;
+    top:15%;
+}
+#secondControl{
+    display: none;
+}
+#carousel h3 span{
+    z-index: 2;
+    cursor: pointer;
+    position: absolute;
+    left:90%;
+    
+}
+#carousel,#sheet{
+    transform: rotate(90deg) scale(0);
+   
+}
+
+
+
+
+#sfa {
+    /* border: 2px solid green; */
+    height:92vh;
+    
+    max-height: 768px;
+}
+
+#shoot,
+#controls {
+    width: 100%;
+
+    /* border: 2px solid blue */
+}
+
+#controls,#secondControl {
+    
+    border: 2px solid black;
+    border-width: 2px 0 0 0;
+    box-shadow:2px 2px 4px gray;
+}
+
+#shoot {
+    position: relative;
+    height: 90%;
+}
+
+#controls {
+    height: 10%;
+}
+
+#canvas,
+#service #video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1 !important;;
+
+}
+
+#video {
+
+    object-fit: cover;
+    transform: scale(1, 1);
+}
+
+#canvas {
+    opacity: 1;
+}
+
+#canvas {
+    border: 5px solid white;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.5);
+
+
+
+
+}
+
+#video {
+    /* transform: scaleX(-1); */
+}
+
+#canvas {
+    transform: translate(-50%, -50%) scaleX(-1);
+}
+
+/*transitions required*/
+#shutter {
+    border: 2px solid black;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    transform: translatey(-50%);
+
+
+
+}
+#carousel img{
+    /* transform: rotate(-90deg) scale(1,1.4); */
+    height: 100%;
+    object-fit: fill;
+    
+
+    /*  */
+}
