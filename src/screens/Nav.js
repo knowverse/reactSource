@@ -1,6 +1,7 @@
 import "../css/nav.css";
 import { useState } from "react";
 const Navigate = (prop) => {
+    console.log(prop.login)
     const [t,setTo]=useState(0);
 
     
@@ -67,7 +68,7 @@ const Navigate = (prop) => {
                     </ul>
                 </div>
                 <div>
-                    <img src="" className="image-rounded" />
+                    <img src="" className="image-rounded" alt="" />
                 </div>
             </nav>
             <main>

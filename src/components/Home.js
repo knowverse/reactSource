@@ -6,10 +6,11 @@ import {Canvas} from "../screens/Canvas";
 import {Service} from "../screens/service";
 const Home=(prop)=>{
     const [service,setService]=useState(false);//data
-    const [screen,setScreen]=useState(0);//screen
-    const [verify,setVerify]=useState(0);//capturing selction
+    const [screen,setScreen]=useState(2);//screen
+    const [verify,setVerify]=useState(1);//capturing selction
     const [can,setCan]=useState(0);
-    console.log(screen)
+
+    console.log(prop)
     useEffect(() => {
         if (screen === 1 || screen === 2) {
             setCan(1);
@@ -48,10 +49,10 @@ const Home=(prop)=>{
               
             :
                 (<>
-                    <Navigate screen={setScreen} login={prop}/>
+                    <Navigate screen={setScreen} login={prop.log}/>
                     {
                         screen?
-                            <Update data={setService} togle={screen}/>
+                            <Update log={prop.log} data={setService} togle={screen}/>
                         :
                             <Identify data={setService}/>
                             

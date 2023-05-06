@@ -10,7 +10,7 @@ const Identify = (prop) => {
         })
         
     }
-    const classes=["N20","N18"];
+    const classes=["N20"];
     const branch=["cse"]
     const section=["cse1"];
     return (

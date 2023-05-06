@@ -7,7 +7,8 @@ const Canvas = (prop) => {
 
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
-    const [conten,setcontent]=useState("")
+    const [conten,setcontent]=useState("");
+    const [tt,settt]=useState(0);
     var content,url;
     if(prop.act==0){
       content="Login Verification";
@@ -60,7 +61,6 @@ const Canvas = (prop) => {
           console.error('Error accessing media devices.', error);
         });
     }, []);
-  
     const send = () => {
       if (canvasRef.current && videoRef.current) {
         const canvas = canvasRef.current;
@@ -70,9 +70,10 @@ const Canvas = (prop) => {
         canvas.height = video.videoHeight;
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
       //  document.getElementById("try").src=canvas.toDataURL();
-       console.log(prop.data);
-        fetch("http://127.0.0.1:8000/"+url, {
-          body: JSON.stringify({ "image_data": JSON.stringify(canvas.toDataURL()),"data":prop.data}),
+       console.log(tt);
+      
+        fetch("https://10.5.2.4:8000/"+url, {
+          body: JSON.stringify({ "image_data": JSON.stringify(canvas.toDataURL()),"data":prop.data,"tt":tt}),
           headers: { "content-type": "application/json" },
           method: "POST"
         })
@@ -87,13 +88,14 @@ const Canvas = (prop) => {
             else{
               
               if(data["message"]==1){
-                if(data["it"]==4){
+                if(tt==5){
                   prop.close(false)
                   prop.check(0);
                 }
                 
-                else if(data["it"]<4){
-                  document.getElementById("heading").innerText="PHOTO"+data["it"];
+                else if(tt<5){
+                  settt(tt+1);
+                  document.getElementById("heading").innerText="PHOTO"+tt;
 
                 }
                 

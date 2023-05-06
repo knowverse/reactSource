@@ -7,12 +7,12 @@ import {Login} from "./components/Login";
 function App() {
   const [login,setLogin]=useState("");
 
-
+  console.log(login)
   return (
     <>
     {
       login ?
-            <Home login={login}/>
+            <Home log={login}/>
       :
             <Login data={setLogin}/>
     }
