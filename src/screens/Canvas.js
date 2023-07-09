@@ -72,7 +72,7 @@ const Canvas = (prop) => {
       //  document.getElementById("try").src=canvas.toDataURL();
        console.log(tt);
       
-        fetch("https://10.5.2.4:8000/"+url, {
+        fetch("http://127.0.0.1:8000/"+url, {
           body: JSON.stringify({ "image_data": JSON.stringify(canvas.toDataURL()),"data":prop.data,"tt":tt}),
           headers: { "content-type": "application/json" },
           method: "POST"
