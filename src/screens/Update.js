@@ -20,9 +20,9 @@ const Update = (prop) => {
         heading="New Registrations";
     }
     
-    const classes=["N18"];
-    const branch=["cse"]
-    const section=["cse2"];
+    const classes=["N18","N19","N20"];
+    const branch=["cse","ece"]
+    const section=["cse1","cse2","cse3","cse4","cse5","cse6"];
     return (
 
         <>

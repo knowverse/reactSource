@@ -72,7 +72,7 @@ const Canvas = (prop) => {
       //  document.getElementById("try").src=canvas.toDataURL();
        console.log(tt);
       
-        fetch("http://127.0.0.1:8000/"+url, {
+        fetch("https://192.168.121.149:8000/"+url, {
           body: JSON.stringify({ "image_data": JSON.stringify(canvas.toDataURL()),"data":prop.data,"tt":tt}),
           headers: { "content-type": "application/json" },
           method: "POST"
@@ -82,18 +82,28 @@ const Canvas = (prop) => {
             setModal(false)
             console.log(data); 
             if(prop.act==0){
-              prop.check(data["verification"])
+              prop.check(data["verification"]);
+              prop.can(0);
 
+            }
+            else if (prop.act==1){
+              if (data["message"]==1){
+                  prop.close(false)
+              }
+              else{
+                document.getElementById("heading").innerText=data["message"];
+
+              }
             }
             else{
               
               if(data["message"]==1){
-                if(tt==5){
+                if(tt==6){
                   prop.close(false)
                   prop.check(0);
                 }
                 
-                else if(tt<5){
+                else if(tt<6){
                   settt(tt+1);
                   document.getElementById("heading").innerText="PHOTO"+tt;
 

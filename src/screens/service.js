@@ -72,7 +72,7 @@ const Service=(prop)=>{
 
           context.drawImage(video, 0, 0, canvas.width, canvas.height);
           console.log("hello");
-          fetch("http://127.0.0.1:8000/identify", {
+          fetch("https://192.168.121.149:8000/identify", {
             body: JSON.stringify({ "image_data": JSON.stringify(canvas.toDataURL()),"data":prop.data }),
             headers: { "content-type": "application/json" },
             method: "POST"
@@ -89,7 +89,7 @@ const Service=(prop)=>{
                 else{
                     setimag([data["image"]])
                 }
-                setabs(data["findings"])
+                setabs([...abs,data["findings"]])
             }
              })
             .catch((err) => { setModal(false);console.log(err) })
@@ -153,7 +153,7 @@ const Service=(prop)=>{
                     <path
                         d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
                 </svg>
-                <span>absents</span>
+                <span>presents</span>
 
             </div>
             <div id="image" onClick={(()=>{if(carouselRef.current){carouselRef.current.style.transform="rotate(90deg) scale(1)"}})}>

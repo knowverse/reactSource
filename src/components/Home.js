@@ -12,9 +12,12 @@ const Home=(prop)=>{
 
     console.log(prop)
     useEffect(() => {
+        console.log(screen);
         if (screen === 1 || screen === 2) {
             setCan(1);
         }
+       
+        
     }, [screen]);
     // if (screen==1 || screen==2){
     //     setCan(1)
@@ -37,14 +40,14 @@ const Home=(prop)=>{
                     verify?
                   
                         ( can?
-                            <Canvas act={screen} check={setVerify} close={setService} data={service}/>
+                            <Canvas act={screen} check={setVerify} close={setService} data={service} can={setCan}/>
                             :
                             <Service close={setService} ver={setVerify} data={service}/>
 
 
                         )
                     :
-                        <Canvas check={setVerify} act={verify} data={service}/>
+                        <Canvas check={setVerify} act={verify} data={service} can={setCan}/>
                 )
               
             :
